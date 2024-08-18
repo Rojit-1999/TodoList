@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Upcoming from "./Upcoming/Upcoming";
+import Today from "./Today/Today";
+import StickyWall from "./Sticky/StickyWall";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route index element={<Upcoming />} />
+          <Route path="/upcoming" element={<Upcoming />} />
+          <Route path="/today" element={<Today />} />
+          <Route path="/Sticky" element={<StickyWall />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
