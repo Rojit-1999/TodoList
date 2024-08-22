@@ -62,14 +62,13 @@ function Upcoming() {
           ))}
         </ul>
 
-        {upcomingTodayData.map((upcomingtoday,index) => (
+        {upcomingTodayData.map((upcomingtoday, index) => (
           <div className="text-[#363636] flex items-center justify-between py-[0.7rem] border-b-[1px]  mt-[1rem]">
             <div className="flex items-center gap-[10px] ">
               {upcomingtoday.check}
               <p>{upcomingtoday.text}</p>
             </div>
             <div>
-             
               <button
                 onClick={() => handleDelete(index)}
                 className="bg-blue-300/50 px-[5px] rounded-[6px]"
